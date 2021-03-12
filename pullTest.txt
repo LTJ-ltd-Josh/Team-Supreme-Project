@@ -1,3 +1,0 @@
-Josh test of adding a file in github website and practicing pulling it to local machine
-
-this line is me (Josh) editing the file that I pulled and pushing it back to the repository.
