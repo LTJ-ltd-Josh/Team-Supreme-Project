@@ -1,0 +1,26 @@
+{
+  "name": "team-supreme-project",
+  "version": "1.0.0",
+  "description": "A restaurant menu app. Allows menu editing and customer orders",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LTJ-ltd-Josh/Team-Supreme-Project.git"
+  },
+  "keywords": [
+    "node",
+    "angular.js",
+    "sqlite",
+    "express"
+  ],
+  "author": "Josh, Sahil, Michell and Zabrina",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/LTJ-ltd-Josh/Team-Supreme-Project/issues"
+  },
+  "homepage": "https://github.com/LTJ-ltd-Josh/Team-Supreme-Project#readme"
+}
