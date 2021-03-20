@@ -4,6 +4,8 @@ const express = require("express");
 
 const app = express();
 
+// require data.js so that the functions can be used here
+const dataFunctions = require("./data/data.js")
 // create endpoint for static files - to serve html files.
 app.use(express.static("static"));
 
@@ -19,7 +21,7 @@ app.get("/menu-data", function(req, res){
         1. use SQL to get menu data from DB
         2. convert that data into JSON to send back to the webpage
         3. send data to webpage
-    }*/
+    
 
     // Just for demonstration here is a JSON string on a couple of menu items which 
     // I'll send to the webpage
@@ -30,6 +32,15 @@ app.get("/menu-data", function(req, res){
     }
 
     res.json(menu);
+    }*/
+
+    // actual code, example left above for reference.
+
+    // call getMenu function to get menu data from db
+    dataFunctions.getMenu(function(menuItems){
+        // send menuItems to client as JSON
+        res.json(menuItems);
+    });
 
 });
 
