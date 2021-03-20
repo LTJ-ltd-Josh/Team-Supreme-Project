@@ -9,7 +9,7 @@ app.use(express.static("static"));
 
 // Create end-points for transferring data between client and database
 
-// URL for sending menu data to web-page
+// URL for sending requesting menu data from database
 
 app.get("/menu-data", function(req, res){
 

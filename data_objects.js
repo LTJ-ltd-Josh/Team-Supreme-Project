@@ -25,4 +25,4 @@ exports.MenuItem = class {
         this.category = category;
         this.dietaryProvisions = dietaryProvisions;
     }
-}
+};
