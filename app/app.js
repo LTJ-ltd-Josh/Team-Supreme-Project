@@ -14,6 +14,7 @@ app.use(express.static("static"));
 app.get("/menu-data", function(req, res){
 
     // when we have the database here we would call a function to get the menu info from the DB
+    // The function to do this would be written in the data.js file, and then referenced here.
     /* e.g function getMenuData(){
         1. use SQL to get menu data from DB
         2. convert that data into JSON to send back to the webpage
