@@ -1,0 +1,110 @@
+
+/*top container*/
+    
+    #main {
+      width: 100%;
+      height: 20%;
+      display: flex;
+    }
+
+    #main div {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 50px;
+    }
+    
+    #main div:nth-of-type(1) {
+      flex-basis: 15%;
+    }
+    #main div:nth-of-type(2) {
+      flex-basis: 70%;
+    }
+    #main div:nth-of-type(3) {
+      flex-basis: 15%;
+    }
+/* Middle container*/   
+
+#main2 {
+      width: 100%;
+      height: 70%;
+      
+      display: flex;
+    }
+    
+    #main2 div {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 50px;
+      
+    }
+    
+    #main2 div:nth-of-type(1) {
+      flex-basis: 20%;
+    }
+    #main2 div:nth-of-type(2) {
+      flex-basis: 80%;
+    }
+    
+   
+/*footer container*/
+
+#main3 {
+      width: 100%;
+      height: 10%;
+      
+      display: flex;
+}
+  
+    #main3 div {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 95%;
+    }
+      
+    #main3 div:nth-of-type(1) {
+      flex-basis: 100;
+    }
+
+
+.image1 {
+    float: left;    
+}
+
+.backbuttons {
+    float: left; 
+    
+    padding-top: 70px;
+}
+
+.button1 { 
+border-radius: 8px;
+background-color: rgb(70, 197, 236) ;
+border: none;
+color: white;
+width: 55%;
+padding: 20px;
+text-align: center;
+margin-bottom: 5px;
+margin-left: 45px;
+margin-top: 20px;
+font-size: 16px; 
+}
+
+.footer {
+ 
+    text-align: right;
+    color: white;
+    
+  } 
+
+  
+.list{
+    list-style-type: none;
+}
+
+.vl {
+  border-left: 4px solid rgb(65, 225, 236);
+  height: 500px;
+  position: absolute;
+  left: 16%;
+  top: 25.2%;
