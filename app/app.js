@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 
 // require data.js so that the functions can be used here
-const dataFunctions = require("./data/data.js")
+const dataFunctions = require("../data/data.js")
 // create endpoint for static files - to serve html files.
 app.use(express.static("static"));
 

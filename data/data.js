@@ -7,10 +7,8 @@ const sqlite3 = require("sqlite3");
 const data_objects = require("../data_objects.js");
 
 // connect to database
-// I have commented all of this out as we have not yet created database
 
-/*
-const databaseName = "fill this in when database file is create"
+const databaseName = "SupremeDining.db"
 var db = new sqlite3.Database(`./${databaseName}`, function(err){
 
     // check for error
@@ -21,7 +19,7 @@ var db = new sqlite3.Database(`./${databaseName}`, function(err){
     // confirm connection to database on console
     console.log("connected to the restaurant database");
 });
-*/
+
 
 // functions that query the database. Set up as exports so they can be used in routes in app.js
 
