@@ -69,11 +69,11 @@ exports.getMenu = function(callback){
                     JOIN                    
                     ITEM_DIET 
                     ON DIETARY_PROVISIONS.Diet_code = ITEM_DIET.Diet_code
-
+                
+                // I know there is an issue with the below - need to work it out.
                 WHERE
 
                     ITEM_DIET.item_id = ${row.Item_id}
-                
             `
             // initiate empty array to hold dietary provisions names
             var dietaryProvisions = []
@@ -83,7 +83,7 @@ exports.getMenu = function(callback){
 
                     // check for error
                     if (err){
-                        console.err(err.message);
+                        console.log(err.message);
                     }
 
                     // for each row in the results, append the name to the dietary provisions array
