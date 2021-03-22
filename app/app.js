@@ -12,7 +12,7 @@ app.use(express.static("static"));
 
 // Create end-points for transferring data between client and database
 
-// URL forrequesting menu data from database
+// URL for requesting menu data from database
 
 app.get("/menu-data", function(req, res){
 
@@ -24,6 +24,17 @@ app.get("/menu-data", function(req, res){
 
 });
 
+
+// URL for requesting Order information from database
+
+app.get("/orders", function(req, res){
+
+    // call getOrders function
+    dataFunctions.getOrders(function(orders){
+        // send order data to client as JSON
+        res.json(orders);
+    });
+});
 
 
 

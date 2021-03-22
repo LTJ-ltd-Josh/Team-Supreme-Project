@@ -73,7 +73,7 @@ exports.getMenu = function(callback){
                 // I know there is an issue with the below - need to work it out.
                 WHERE
 
-                    ITEM_DIET.item_id = ${row.Item_id}
+                    ITEM_DIET.item_id = '${row.Item_id}'
             `
             // initiate empty array to hold dietary provisions names
             var dietaryProvisions = []
@@ -107,6 +107,40 @@ exports.getMenu = function(callback){
 
         // define the callback function taking the menuItems array
         callback(menuItems);
+
+    });
+};
+
+// Function to get order information from database
+exports.getOrders = function(callback){
+
+    // SQL string
+    var sql = `SELECT
+                        Order.Order_number,
+                        Order.TableNumber,
+                        Staff.FirstName,
+                        Staff.Surname
+                
+                FROM
+                        Order
+                    JOIN
+                        Staff 
+                    ON
+                        Order.Staff_id = Staff.Staff_id
+                
+                WHERE
+                        Order.Order_completed = false;
+        
+                        `
+
+    // execute query to db
+    db.all(sql, function(err, rows){
+
+
+        // Initiate empty array for order objects
+        var orders = []
+        // for each row, create an Order object
+        
 
     });
 };
