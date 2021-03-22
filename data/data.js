@@ -7,10 +7,8 @@ const sqlite3 = require("sqlite3");
 const data_objects = require("../data_objects.js");
 
 // connect to database
-// I have commented all of this out as we have not yet created database
 
-/*
-const databaseName = "fill this in when database file is create"
+const databaseName = "SupremeDining.db"
 var db = new sqlite3.Database(`./${databaseName}`, function(err){
 
     // check for error
@@ -21,7 +19,7 @@ var db = new sqlite3.Database(`./${databaseName}`, function(err){
     // confirm connection to database on console
     console.log("connected to the restaurant database");
 });
-*/
+
 
 // functions that query the database. Set up as exports so they can be used in routes in app.js
 
@@ -71,11 +69,11 @@ exports.getMenu = function(callback){
                     JOIN                    
                     ITEM_DIET 
                     ON DIETARY_PROVISIONS.Diet_code = ITEM_DIET.Diet_code
-
+                
+                // I know there is an issue with the below - need to work it out.
                 WHERE
 
                     ITEM_DIET.item_id = ${row.Item_id}
-                
             `
             // initiate empty array to hold dietary provisions names
             var dietaryProvisions = []
@@ -85,7 +83,7 @@ exports.getMenu = function(callback){
 
                     // check for error
                     if (err){
-                        console.err(err.message);
+                        console.log(err.message);
                     }
 
                     // for each row in the results, append the name to the dietary provisions array
