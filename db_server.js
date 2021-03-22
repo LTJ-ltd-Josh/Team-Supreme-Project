@@ -22,18 +22,6 @@ var app = express();
 // Add static files location
 app.use(express.static("static"));
 
-// Create a get for /student
-app.get("/STAFF/:Staff_id", function(req, res) {
-    var sql = `
-        SELECT * FROM STAFF
-        WHERE Staff_id = "${req.params.Staff_id}"`;
-    db.get(sql, function(err, row) {
-        if (err) {
-            return console.error(err.message);
-        }
-        res.json(row);
-    });
-});
 
 // Create a get for /students
 app.get("/STAFF", function(req, res) {
@@ -56,5 +44,67 @@ app.get("/CUSTOMER", function(req, res) {
     });
 });
 
+app.get("/ORDER", function(req, res) {
+    var sql = "SELECT * FROM ORDER";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+app.get("/MENU", function(req, res) {
+    var sql = "SELECT * FROM MENU";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+
+app.get("/CATEGORY", function(req, res) {
+    var sql = "SELECT * FROM CATEGORY";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+app.get("/MENU/:Item_id", function(req, res) {
+    var sql = `
+        SELECT * FROM MENU
+        WHERE Item_id = "${req.params.Item_id}"`;
+    db.get(sql, function(err, row) {
+        if (err) {
+            return console.error(err.message);
+        }
+        res.json(row);
+    });
+});
+app.get("/DIETARY_PROVISIONS", function(req, res) {
+    var sql = "SELECT * FROM DIETARY_PROVISIONS";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+
+app.get("/ITEM_DIET", function(req, res) {
+    var sql = "SELECT * FROM  ITEM_DIET";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
 // Start server on port 3000
 app.listen(3000);
