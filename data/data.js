@@ -150,7 +150,7 @@ exports.getOrders = function(callback){
         if(err){
             console.log(err.message);
         }
-
+        console.log(rows);
         // Initiate empty array for order objects
         var orders = [];
         // Initiate empty array to record order IDs of added orders
@@ -291,7 +291,7 @@ exports.getMenuByID = function(ID, callback){
     });
 };
 
-// endpoint to get all data from DIETARY_PROVISIONS table
+// function to get all data from DIETARY_PROVISIONS table
 exports.getDietaryProvisions = function(callback){
     // SQL query
     var sql = "SELECT * FROM DIETARY_PROVISIONS";
@@ -300,6 +300,20 @@ exports.getDietaryProvisions = function(callback){
         if (err) {
             return console.error(err);
         }
+        //callback with data from DB
         callback(rows);
+    });
+};
+
+// function to get all data from ITEM_DIET table
+exports.getItemDiet = function(callback){
+    // SQL query
+    var sql = "SELECT * FROM  ITEM_DIET";
+    // Query to db
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+    callback(rows);
     });
 };

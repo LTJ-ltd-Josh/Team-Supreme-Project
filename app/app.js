@@ -113,14 +113,14 @@ app.get("/DIETARY_PROVISIONS", function(req, res) {
 
 // endpoint to get all results from ITEM_DIET table
 app.get("/ITEM_DIET", function(req, res) {
-    var sql = "SELECT * FROM  ITEM_DIET";
-    db.all(sql, function(err, rows) {
-        if (err) {
-            return console.error(err);
-        }
+    
+    dataFunctions.getItemDiet(function(rows){
         res.json(rows);
+
     });
-});
+        
+    });
+
 
 
 
