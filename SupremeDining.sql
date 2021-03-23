@@ -182,13 +182,10 @@ INSERT INTO MENU VALUES('M103','Double Hamburger','2 tender beef patties inside 
 
 CREATE TABLE ORDER_DETAILS (  
 
-   Quantity       INT(15), 
-
-   Sub_total       FLOAT, 
-
    Order_number   INT(5),
-
-   Item_id        VARCHAR(6),
+   Item_id        VARCHAR(6),   
+   Quantity       INT(15), 
+   Sub_total       FLOAT, 
 
    FOREIGN KEY (Order_number) REFERENCES ORDERS(Order_number), 
 
@@ -307,7 +304,7 @@ CREATE TABLE CUSTOMER(
 
   Customer_id   INT(15)  PRIMARY KEY, 
 
-  First_name    VARCHAR(50), 
+  Name 	           VARCHAR(50), 
 
   Table_number  VARCHAR (5), 
 
@@ -334,7 +331,7 @@ CREATE TABLE ORDERS(
 
   Table_number     VARCHAR(5), 
 
-  Order_completed  VARCHAR(5), 
+  Order_completed  Boolean, 
 
   Staff_id         VARCHAR(6), 
 
