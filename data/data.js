@@ -207,6 +207,23 @@ exports.getStaff = function(callback){
         if (err) {
             return console.error(err);
         };
+        // callback function with data returned from DB
         callback(rows);   
         });    
+};
+
+
+// function to get all data from CUSTOMERS table 
+exports.getCustomers = function(callback){
+
+    // SQL statement
+    var sql = "SELECT * FROM CUSTOMER";
+    // query to DB
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+      }
+      // callback with data from DB
+      callback(rows);
+    });
 };

@@ -47,16 +47,15 @@ app.get("/STAFF", function(req, res) {
 
 
 
-// endpoint to get all data from CUSTOMERS table 
-app.get("/CUSTOMERS", function(req, res) {
-    var sql = "SELECT * FROM CUSTOMERS";
-    db.all(sql, function(err, rows) {
-        if (err) {
-            return console.error(err);
-        }
-        res.json(rows);
+// endpoint to get all data from CUSTOMER table 
+app.get("/CUSTOMER", function(req, res) {
+    
+        dataFunctions.getCustomers(function(rows){
+            res.json(rows);
+        });
+        
     });
-});
+
 
 // endpoint to get all data from ORDERS table 
 app.get("/ORDERS", function(req, res) {
