@@ -116,10 +116,10 @@ exports.getOrders = function(callback){
     // SQL string
     var sql = `SELECT
                         ORDERS.Order_number as orderNumber,
-                        ORDERS.TableNumber as tableNumber,
+                        ORDERS.Table_number as tableNumber,
                         STAFF.First_name as staffFirstName,
                         STAFF.Surname as staffSurname,
-                        ORDER_DETAILS.QUANTITY as quantity,
+                        ORDER_DETAILS.quantity as quantity,
                         MENU.Item_name as itemName,
                         MENU.Price as price
                 
@@ -145,7 +145,7 @@ exports.getOrders = function(callback){
 
     // execute query to db
     db.all(sql, function(err, rows){
-
+        console.log(rows)
         // check for error
         if(err){
             console.log(err.message);
