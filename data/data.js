@@ -9,7 +9,7 @@ const data_objects = require("../data_objects.js");
 // connect to database
 
 const databaseName = "SupremeDining.db"
-var db = new sqlite3.Database(`./${databaseName}`, function(err){
+var db = new sqlite3.Database(`data/${databaseName}`, function(err){
 
     // check for error
     if (err){
@@ -136,10 +136,10 @@ exports.getOrders = function(callback){
                     JOIN
                         MENU
                         ON
-                        ORDER_DETAILS.Item_id = MENU.Item_id
+                        ORDER_DETAILS.Sub_total = MENU.Item_id
                 
-                WHERE
-                    ORDERS.Order_Completed = false;
+                    WHERE
+                        ORDERS.Order_Completed = false;
         
                         `
 
