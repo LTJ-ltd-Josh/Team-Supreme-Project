@@ -60,7 +60,7 @@ exports.Order = class {
         this.tableNumber = tableNumber;
         this.staffFirstName = staffFirstName;
         this.staffSurname = staffSurname;
-        this.orderItems = OrderItems
+        this.orderItems = orderItems
     }
 
 

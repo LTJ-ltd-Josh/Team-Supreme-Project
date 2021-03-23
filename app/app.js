@@ -27,7 +27,7 @@ app.get("/menu-data", function(req, res){
 
 // URL for requesting Order information from database
 
-app.get("/orders", function(req, res){
+app.get("/orderslist", function(req, res){
 
     // call getOrders function
     dataFunctions.getOrders(function(orders){
