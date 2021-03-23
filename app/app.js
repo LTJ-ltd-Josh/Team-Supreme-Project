@@ -67,15 +67,15 @@ app.get("/ORDERS", function(req, res) {
  });
 
 // endpoint to get all data from MENU table 
-app.get("/MENU", function(req, res) {
-    var sql = "SELECT * FROM MENU";
-    db.all(sql, function(err, rows) {
-        if (err) {
-            return console.error(err);
-        }
+app.get("/MENUTABLE", function(req, res) {
+   
+    dataFunctions.getMenuTable(function(rows){
+
         res.json(rows);
     });
+        
 });
+
 
 // endpoint to get data from MENU table based on particular food category
 app.get("/MENU/:Category_id", function(req, res) {

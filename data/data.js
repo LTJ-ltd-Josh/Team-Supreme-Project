@@ -236,6 +236,20 @@ exports.getOrders = function(callback){
         if (err) {
             return console.error(err);
         };
+        // callback with data from DB
+        callback(rows);
+});
+};
+
+exports.getMenuTable = function(callback){
+    // SQL query
+    var sql = "SELECT * FROM MENU";
+    // query to DB
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        // callback with data from DB
         callback(rows);
 });
 };
