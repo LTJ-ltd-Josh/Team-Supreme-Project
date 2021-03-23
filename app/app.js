@@ -36,6 +36,98 @@ app.get("/orderslist", function(req, res){
     });
 });
 
+// endpoint to get all data from STAFF table 
+app.get("/STAFF", function(req, res) {
+    var sql = "SELECT * FROM STAFF";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+// endpoint to get all data from CUSTOMERS table 
+app.get("/CUSTOMERS", function(req, res) {
+    var sql = "SELECT * FROM CUSTOMERS";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+// endpoint to get all data from ORDERS table 
+app.get("/ORDERS", function(req, res) {
+    var sql = "SELECT * FROM ORDERS";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+// endpoint to get all data from MENU table 
+app.get("/MENU", function(req, res) {
+    var sql = "SELECT * FROM MENU";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+// endpoint to get data from MENU table based on particular food category
+app.get("/MENU/:Category_id", function(req, res) {
+    var sql = `
+        SELECT item_name, Category_id FROM MENU
+        WHERE Category_id = "${req.params.Category_id}"`;
+    db.all(sql, function(err, row) {
+        if (err) {
+            return console.error(err.message);
+        }
+        res.json(row);
+    });
+}); 
+
+// endpoint to get data from MENU table based on particular MENU item ID
+app.get("/MENU/:Item_id", function(req, res) {
+    var sql = `
+        SELECT * FROM MENU
+        WHERE Item_id = "${req.params.Item_id}"`;
+    db.all(sql, function(err, row) {
+        if (err) {
+            return console.error(err.message);
+        }
+        res.json(row);
+    });
+});
+
+// endpoint to get all results from DIETARY_PROVISIONS table
+app.get("/DIETARY_PROVISIONS", function(req, res) {
+    var sql = "SELECT * FROM DIETARY_PROVISIONS";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
+// endpoint to get all results from ITEM_DIET table
+app.get("/ITEM_DIET", function(req, res) {
+    var sql = "SELECT * FROM  ITEM_DIET";
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        res.json(rows);
+    });
+});
+
 
 
 // initiate server
