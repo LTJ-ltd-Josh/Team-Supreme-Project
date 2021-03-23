@@ -1,7 +1,7 @@
 
 /*top container*/
     
-    #main {
+    /* #main {
       width: 100%;
       height: 20%;
       display: flex;
@@ -20,11 +20,11 @@
       flex-basis: 70%;
     }
     #main div:nth-of-type(3) {
-      flex-basis: 15%;
-    }
+      flex-basis: 15%; 
+    } */
 /* Middle container*/   
 
-#main2 {
+/* #main2 {
       width: 100%;
       height: 70%;
       
@@ -35,14 +35,15 @@
       flex-grow: 0;
       flex-shrink: 0;
       flex-basis: 50px;
-      
+	  width: 800px;
+      margin-right: 106px;
     }
     
     #main2 div:nth-of-type(1) {
       flex-basis: 20%;
-    }
+    } */
     #main2 div:nth-of-type(2) {
-      flex-basis: 80%;
+      /* flex-basis: 80%; */
     }
     
    
@@ -72,8 +73,7 @@
 
 .backbuttons {
     float: left; 
-    
-    padding-top: 70px;
+    padding-top: 40px;
 }
 
 .button1 { 
@@ -85,7 +85,7 @@ width: 55%;
 padding: 20px;
 text-align: center;
 margin-bottom: 5px;
-margin-left: 45px;
+margin-left: 80px;
 margin-top: 20px;
 font-size: 16px; 
 }
@@ -106,5 +106,17 @@ font-size: 16px;
   border-left: 4px solid rgb(65, 225, 236);
   height: 500px;
   position: absolute;
+  display: none;
   left: 16%;
   top: 25.2% ;}
+
+  .right-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+div#main2 {
+  flex: 0 0 25%;
+  position: fixed;
+  width: 20%;
+}

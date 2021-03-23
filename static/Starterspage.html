@@ -5,54 +5,174 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Supreme Dining Webpage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="supreme.css">
     <script src="supreme.js"></script>
 </head>
     
 <body>
 
-<header>
-        
-    <div id="main">
-        <div class = image1><img src="../static/Restaurant.jpeg"width="230" height="120" ></div>
-        
-        <div><h2 style = "font-size: 50px;" >Supreme Dining</h2></div>
 
-        <div class= backbuttons>
-        <button  style="margin: 10px" type="button" onclick="document.location='../static/index.html'">Home</button>
-        <button  style="margin: 10px" type="button" onclick="goBack()">Back</button> 
+    
+    <header>    
+        <div id="main">
+            <div class ="image1"><img src="Restaurant.jpeg"width="230" height="120" ></div>
+            <div class="right-nav">
+                <div><h2 style = "font-size: 50px;" >Supreme Dining</h2></div>
+    
+            <div class= backbuttons>
+            <button  style="margin: 10px" type="button" onclick="document.location='index.html'">Home</button>
+            <button  style="margin: 10px" type="button" onclick="goBack()">Back</button> 
+            </div>
+            </div>
         </div>
-    </div>
-    
-</header>
-    
-    <hr style="height: 4px;background-color:rgb(65, 225, 236);" />
-<article>
-
-<div id="main2">
+        <hr style="height: 4px;background-color:rgb(65, 225, 236);" />
+    </header>
         
-    <div class = "list">     
-      
-      
-        <li><button class= "button1" onclick="document.location='../static/Starterspage.html'">STARTERS</button></li>
-        <li><button class= "button1" onclick="document.location='../static/Mainspage.html'">MAINS</button></li>
-        <li> <button class= "button1" onclick="document.location='../static/Sidespage.html'">SIDES</button></li>
-        <li> <button class= "button1" onclick="document.location='../static/Dessertspage.html'">DESSERTS</button></li>
-        <li> <button class= "button1" onclick="document.location='../static/Drinkspage.html'">DRINKS</button></li> 
-       
-    </div>
+        
+    <article class="art">
     
-        <div><h1 style = "font-size: 40px; text-align: center;">Starters</h1></div>
-        <div class="vl"></div>
-</div>
+    <div id="main2">   
+        <div class = "list">     
+            <li><button class= "button1" onclick="document.location='Starterspage.html'">STARTERS</button></li>
+            <li><button class= "button1" onclick="document.location='Mainspage.html'">MAINS</button></li>
+            <li> <button class= "button1" onclick="document.location='Sidespage.html'">SIDES</button></li>
+            <li> <button class= "button1" onclick="document.location='Dessertspage.html'">DESSERTS</button></li>
+            <li> <button class= "button1" onclick="document.location='Drinkspage.html'">DRINKS</button></li> 
+           
+        </div>
+    </div>	
+    <main class="main">
+        <div class="main-heading text-center pb-3">
+            <h2>Today's Starters</h2>
+        </div>
+        <div id="Starter" class="container" style="display: block;">
+            <div class="main-wrapper">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h4>
+                            Tomato Soup
+                        </h4>
+                    </div>
+                    <div class="price"> <p>100</p>
+                    </div>
+                </div>
+                <p class="w3-text-grey">Ask the waiter</p>
+            </div>
+            
+            <hr>
+            <div class="main-wrapper">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h4>
+                            Garlic bread
+                        </h4>
+                    </div>
+                    <div class="price"> <p>120</p>
+                    </div>
+                </div>
+                <p class="w3-text-grey">AGrilled ciabatta, garlic butter, onions</p>
+            </div>
+            
+            <hr>
+            <div class="main-wrapper">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h4>
+                            Pizza
+                        </h4>
+                    </div>
+                    <div class="price"> <p>200</p>
+                    </div>
+                </div>
+                <p class="w3-text-grey">Fresh tomatoes, fresh mozzarella, fresh basil</p>
+            </div>
+            
+            <hr>
+            <div class="main-wrapper">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h4>
+                            Paneer Tikka.
+                        </h4>
+                    </div>
+                    <div class="price"> <p>300</p>
+                    </div>
+                </div>
+                <p class="w3-text-grey">Fresh Paneer, fresh mozzarella, special sauce</p>
+            </div>
+            
+            <hr>
+            <div class="main-wrapper">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h4>
+                            Mushroom Manchurian (Dry)
+                        </h4>
+                    </div>
+                    <div class="price"> <p>250</p>
+                    </div>
+                </div>
+                <p class="w3-text-grey">Ask the waiter</p>
+            </div>
+            
+            <hr>
+            <div class="main-wrapper">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h4>
+                            French Fries
+                        </h4>
+                    </div>
+                    <div class="price"> <p>99</p>
+                    </div>
+                </div>
+                <p class="w3-text-grey">Veg & Non-veg</p>
+            </div>
+            <hr>
+            <div class="main-wrapper">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h4>
+                            Honey Chilli Potato
+                        </h4>
+                    </div>
+                    <div class="price"> <p>149</p>
+                    </div>
+                </div>
+                <p class="w3-text-grey">Fresh Honey and Potato</p>
+            </div>
+            <hr>
+            <div class="main-wrapper">
+                <div class="wrapper">
+                    <div class="heading">
+                        <h4>
+                            Sweet Corn
+                        </h4>
+                    </div>
+                    <div class="price"> <p>99</p>
+                    </div>
+                </div>
+                <p class="w3-text-grey">American, Indian corn</p>
+            </div>
+            
+          </div>
+    </main>
+    
+    </article>  
+    
+           
 
-</article>
 
     <div id="main3">
     <div class= footer>
         
-    <a href="https://www.instagram.com/"><img alt="Instagram" src="../static/instagram.jpeg" width="50" height="30"></a>
-    <a href="https://www.Facebook.com/"><img alt="Facebook" src="../static/facebook.jpeg" width=50 height=30></a>
+    <a href="https://www.instagram.com/"><img alt="Instagram" src="instagram.jpeg" width="50" height="30"></a>
+    <a href="https://www.Facebook.com/"><img alt="Facebook" src="facebook.jpeg" width=50 height=30></a>
   
     </div>
 
