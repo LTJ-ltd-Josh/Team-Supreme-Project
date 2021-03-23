@@ -79,16 +79,15 @@ app.get("/MENUTABLE", function(req, res) {
 
 // endpoint to get data from MENU table based on particular food category
 app.get("/MENU/:Category_id", function(req, res) {
-    var sql = `
-        SELECT item_name, Category_id FROM MENU
-        WHERE Category_id = "${req.params.Category_id}"`;
-    db.all(sql, function(err, row) {
-        if (err) {
-            return console.error(err.message);
-        }
-        res.json(row);
+    
+    dataFunctions.getMenuByCategory(req.params.Category_id, function(rows){
+        
+        res.json(rows);
+
     });
-}); 
+        
+});
+
 
 // endpoint to get data from MENU table based on particular MENU item ID
 app.get("/MENU/:Item_id", function(req, res) {
