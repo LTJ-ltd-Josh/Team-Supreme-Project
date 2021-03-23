@@ -136,7 +136,7 @@ exports.getOrders = function(callback){
                     JOIN
                         MENU
                         ON
-                        ORDER_DETAILS.Sub_total = MENU.Item_id
+                        ORDER_DETAILS.Item_id = MENU.Item_id
                 
                     WHERE
                         ORDERS.Order_Completed = false;
@@ -145,7 +145,7 @@ exports.getOrders = function(callback){
 
     // execute query to db
     db.all(sql, function(err, rows){
-        console.log(rows)
+        
         // check for error
         if(err){
             console.log(err.message);
