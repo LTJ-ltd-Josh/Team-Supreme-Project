@@ -150,13 +150,14 @@ exports.getOrders = function(callback){
         if(err){
             console.log(err.message);
         }
-        console.log(rows);
+        
         // Initiate empty array for order objects
         var orders = [];
         // Initiate empty array to record order IDs of added orders
         var orderIDs = []
         // for each row, create an Order object
         for(var row of rows){
+            
            
             // If statement to see if Order object has already been created for this Order ID
             if (orderIDs.includes(row.orderNumber)==false){
@@ -229,7 +230,7 @@ exports.getCustomers = function(callback){
 };
 
 // function to get all data form ORDERS table
-exports.getOrders = function(callback){
+exports.getOrdersTable = function(callback){
     // SQL statement
     var sql = "SELECT * FROM ORDERS";
     // Query to DB

@@ -60,7 +60,7 @@ app.get("/CUSTOMER", function(req, res) {
 // endpoint to get all data from ORDERS table 
 app.get("/ORDERS", function(req, res) {
     
-    dataFunctions.getOrders(function(rows){
+    dataFunctions.getOrdersTable(function(rows){
 
         res.json(rows);
     });
