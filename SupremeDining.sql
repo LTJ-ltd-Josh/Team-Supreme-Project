@@ -6,7 +6,7 @@ CREATE TABLE DIETARY_PROVISIONS (
    Diet_code VARCHAR (6) PRIMARY KEY, 
 
    Name      VARCHAR (50));
-=======
+
 
 CREATE TABLE ITEM_DIET ( 
 item_id        VARCHAR (6) NOT NULL, 
