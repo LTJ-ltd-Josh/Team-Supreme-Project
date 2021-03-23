@@ -1,0 +1,7 @@
+Just a list of references used when making the project
+
+some references also embedded in code.
+
+-- reference https://www.w3schools.com/Sql/sql_dates.asp - look up date data-type 
+
+reference - reading about whether for loops are asynchronus https://www.amitmerchant.com/asynchronous-for-loops-in-javascript/
