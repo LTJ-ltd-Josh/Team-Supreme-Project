@@ -84,19 +84,22 @@ exports.getMenu = function(callback){
             
             menuItems.push(menuItem)
 
+           
+
             };  
-        
+            
+         };  
         // second for loop to add dietary provisions to objects
+        // reference - reading about whether for loops are asynchronus https://www.amitmerchant.com/asynchronous-for-loops-in-javascript/
         for (var row of rows){
             
             // for loop to check find the menu item that matches the menuItemId of the row
             for (var menuItem of menuItems){
-                if (menuItem.Item_id == row.Item_id){
+                
+                if (menuItem.ID == row.Item_id){
                     menuItem.dietaryProvisions.push(row.dietaryProvisionName);
                 };
             };
-        };  
-        
         };  
     // define the callback function taking the menuItems array
    callback(menuItems);
