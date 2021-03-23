@@ -23,7 +23,7 @@ var app = express();
 app.use(express.static("static"));
 
 
-// Create a get for /students
+// Create a get for /STAFF
 app.get("/STAFF", function(req, res) {
     var sql = "SELECT * FROM STAFF";
     db.all(sql, function(err, rows) {
@@ -64,28 +64,31 @@ app.get("/MENU", function(req, res) {
     });
 });
 
-
-app.get("/CATEGORY", function(req, res) {
-    var sql = "SELECT * FROM CATEGORY";
-    db.all(sql, function(err, rows) {
+app.get("/MENU/:Category_id", function(req, res) {
+    var sql = `
+        SELECT item_name, Category_id FROM MENU
+        WHERE Category_id = "${req.params.Category_id}"`;
+    db.all(sql, function(err, row) {
         if (err) {
-            return console.error(err);
+            return console.error(err.message);
         }
-        res.json(rows);
+        res.json(row);
     });
-});
+}); 
 
 app.get("/MENU/:Item_id", function(req, res) {
     var sql = `
         SELECT * FROM MENU
         WHERE Item_id = "${req.params.Item_id}"`;
-    db.get(sql, function(err, row) {
+    db.all(sql, function(err, row) {
         if (err) {
             return console.error(err.message);
         }
         res.json(row);
     });
 });
+
+
 app.get("/DIETARY_PROVISIONS", function(req, res) {
     var sql = "SELECT * FROM DIETARY_PROVISIONS";
     db.all(sql, function(err, rows) {
@@ -106,5 +109,8 @@ app.get("/ITEM_DIET", function(req, res) {
         res.json(rows);
     });
 });
+
+
+
 // Start server on port 3000
 app.listen(3000);
