@@ -38,14 +38,14 @@ app.get("/orderslist", function(req, res){
 
 // endpoint to get all data from STAFF table 
 app.get("/STAFF", function(req, res) {
-    var sql = "SELECT * FROM STAFF";
-    db.all(sql, function(err, rows) {
-        if (err) {
-            return console.error(err);
-        }
+    
+    // call getStaff function
+    dataFunctions.getStaff(function(rows){
         res.json(rows);
     });
-});
+ });  
+
+
 
 // endpoint to get all data from CUSTOMERS table 
 app.get("/CUSTOMERS", function(req, res) {

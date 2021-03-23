@@ -195,3 +195,18 @@ exports.getOrders = function(callback){
         callback(orders);
     });
 };
+
+// function to get all data from STAFF table 
+
+exports.getStaff = function(callback){
+
+    // SQL statement
+    var sql = "SELECT * FROM STAFF";
+    // Query to DB
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        };
+        callback(rows);   
+        });    
+};
