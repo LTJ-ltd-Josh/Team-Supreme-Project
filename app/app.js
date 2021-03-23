@@ -41,6 +41,7 @@ app.get("/STAFF", function(req, res) {
     
     // call getStaff function
     dataFunctions.getStaff(function(rows){
+        // send data to client as json
         res.json(rows);
     });
  });  
@@ -49,9 +50,11 @@ app.get("/STAFF", function(req, res) {
 
 // endpoint to get all data from CUSTOMER table 
 app.get("/CUSTOMER", function(req, res) {
-    
+        // call getCustomers function
         dataFunctions.getCustomers(function(rows){
+            // send data to client as json
             res.json(rows);
+
         });
         
     });
@@ -59,18 +62,18 @@ app.get("/CUSTOMER", function(req, res) {
 
 // endpoint to get all data from ORDERS table 
 app.get("/ORDERS", function(req, res) {
-    
+    // call getOrdersTable function
     dataFunctions.getOrdersTable(function(rows){
-
+        // send data to client as json
         res.json(rows);
     });
  });
 
 // endpoint to get all data from MENU table 
 app.get("/MENUTABLE", function(req, res) {
-   
+   // call getMenuTable function
     dataFunctions.getMenuTable(function(rows){
-
+        // send data to client as json
         res.json(rows);
     });
         
@@ -79,9 +82,9 @@ app.get("/MENUTABLE", function(req, res) {
 
 // endpoint to get data from MENU table based on particular food category
 app.get("/MENU/category/:Category_id", function(req, res) {
-    
+    // call getMenuByCategory function
     dataFunctions.getMenuByCategory(req.params.Category_id, function(rows){
-        
+        // send data to client as json
         res.json(rows);
 
     });
@@ -91,8 +94,9 @@ app.get("/MENU/category/:Category_id", function(req, res) {
 
 // endpoint to get data from MENU table based on particular MENU item ID
 app.get("/MENU/ID/:Item_id", function(req, res) {
-    
+    // call getMenuByID function
     dataFunctions.getMenuByID(req.params.Item_id, function(row){
+       // send data to client as json
         res.json(row);
 
     });
@@ -102,8 +106,9 @@ app.get("/MENU/ID/:Item_id", function(req, res) {
 
 // endpoint to get all results from DIETARY_PROVISIONS table
 app.get("/DIETARY_PROVISIONS", function(req, res) {
-    
+    // call getDietaryProvisions function
     dataFunctions.getDietaryProvisions(function(rows){
+       // send data to client as json
         res.json(rows);
 
     });
@@ -113,8 +118,9 @@ app.get("/DIETARY_PROVISIONS", function(req, res) {
 
 // endpoint to get all results from ITEM_DIET table
 app.get("/ITEM_DIET", function(req, res) {
-    
+    // call getItemDiet function
     dataFunctions.getItemDiet(function(rows){
+       // send data to client as json
         res.json(rows);
 
     });
