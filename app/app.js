@@ -78,7 +78,7 @@ app.get("/MENUTABLE", function(req, res) {
 
 
 // endpoint to get data from MENU table based on particular food category
-app.get("/MENU/:Category_id", function(req, res) {
+app.get("/MENU/category/:Category_id", function(req, res) {
     
     dataFunctions.getMenuByCategory(req.params.Category_id, function(rows){
         
@@ -90,28 +90,26 @@ app.get("/MENU/:Category_id", function(req, res) {
 
 
 // endpoint to get data from MENU table based on particular MENU item ID
-app.get("/MENU/:Item_id", function(req, res) {
-    var sql = `
-        SELECT * FROM MENU
-        WHERE Item_id = "${req.params.Item_id}"`;
-    db.all(sql, function(err, row) {
-        if (err) {
-            return console.error(err.message);
-        }
+app.get("/MENU/ID/:Item_id", function(req, res) {
+    
+    dataFunctions.getMenuByID(req.params.Item_id, function(row){
         res.json(row);
+
     });
+        
 });
+
 
 // endpoint to get all results from DIETARY_PROVISIONS table
 app.get("/DIETARY_PROVISIONS", function(req, res) {
-    var sql = "SELECT * FROM DIETARY_PROVISIONS";
-    db.all(sql, function(err, rows) {
-        if (err) {
-            return console.error(err);
-        }
+    
+    dataFunctions.getDietaryProvisions(function(rows){
         res.json(rows);
+
     });
-});
+        
+    });
+
 
 // endpoint to get all results from ITEM_DIET table
 app.get("/ITEM_DIET", function(req, res) {

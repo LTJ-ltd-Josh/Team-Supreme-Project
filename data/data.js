@@ -213,7 +213,7 @@ exports.getStaff = function(callback){
 };
 
 
-// function to get all data from CUSTOMERS table 
+// function to get all data from CUSTOMER table 
 exports.getCustomers = function(callback){
 
     // SQL statement
@@ -228,6 +228,7 @@ exports.getCustomers = function(callback){
     });
 };
 
+// function to get all data form ORDERS table
 exports.getOrders = function(callback){
     // SQL statement
     var sql = "SELECT * FROM ORDERS";
@@ -241,6 +242,7 @@ exports.getOrders = function(callback){
 });
 };
 
+// function to get all data from MENU table
 exports.getMenuTable = function(callback){
     // SQL query
     var sql = "SELECT * FROM MENU";
@@ -252,4 +254,52 @@ exports.getMenuTable = function(callback){
         // callback with data from DB
         callback(rows);
 });
+};
+
+// endpoint to get all menu items relevant to a particular category
+exports.getMenuByCategory = function(categoryID, callback){
+
+    // SQL statment
+    var sql = `
+        SELECT Item_name, Category_id FROM MENU
+        WHERE Category_id = "${categoryID}"`;
+    // Query to DB
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err.message);
+        };
+        // callback with data returned from DB
+        callback(rows);
+    });
+};
+
+
+// endpoint to get menu item by ID
+
+exports.getMenuByID = function(ID, callback){
+    // sql statement
+    var sql = `
+        SELECT * FROM MENU
+        WHERE Item_id = "${ID}"`;
+
+    // request to DB
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err.message);
+        }
+    callback(rows);
+    });
+};
+
+// endpoint to get all data from DIETARY_PROVISIONS table
+exports.getDietaryProvisions = function(callback){
+    // SQL query
+    var sql = "SELECT * FROM DIETARY_PROVISIONS";
+    // Query to DB
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        }
+        callback(rows);
+    });
 };
