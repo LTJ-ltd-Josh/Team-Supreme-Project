@@ -59,14 +59,12 @@ app.get("/CUSTOMER", function(req, res) {
 
 // endpoint to get all data from ORDERS table 
 app.get("/ORDERS", function(req, res) {
-    var sql = "SELECT * FROM ORDERS";
-    db.all(sql, function(err, rows) {
-        if (err) {
-            return console.error(err);
-        }
+    
+    dataFunctions.getOrders(function(rows){
+
         res.json(rows);
     });
-});
+ });
 
 // endpoint to get all data from MENU table 
 app.get("/MENU", function(req, res) {

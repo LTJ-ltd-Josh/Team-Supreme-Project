@@ -227,3 +227,15 @@ exports.getCustomers = function(callback){
       callback(rows);
     });
 };
+
+exports.getOrders = function(callback){
+    // SQL statement
+    var sql = "SELECT * FROM ORDERS";
+    // Query to DB
+    db.all(sql, function(err, rows) {
+        if (err) {
+            return console.error(err);
+        };
+        callback(rows);
+});
+};
