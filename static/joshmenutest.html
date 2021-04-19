@@ -7,11 +7,26 @@
     <script src="joshmenutest.js"></script>
 </head>
 
-
-
 <body>
+    <h1>Menu</h1>
 
+    <div ng-app = "mainApp" ng-controller="menuController">
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Item Price</th>
 
+        </tr>
+        <tr ng-repeat= "item in items">
+            <td>{{item.name}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.price}}</td>
+
+        </tr>
+
+    </table>
+    </div>
 
 </body>
 
