@@ -10,5 +10,5 @@ mainApp.controller("menuController", function($scope, $http){
     $http.get('/menu-data').then(function(response){
 
         $scope.items = response.data;
-    });
+    });    
 });
