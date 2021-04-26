@@ -11,6 +11,11 @@
     <h1>Menu</h1>
 
     <div ng-app = "mainApp" ng-controller="menuController">
+    
+    <h3>Basket</h3>
+    <ul>
+        <li ng-repeat="option in basket">Name: {{option.Name}} | Quantity: {{option.Quantity}}</li>
+    </ul>
     <table>
         <tr>
             <th>Item Name</th>
@@ -22,7 +27,7 @@
             <td>{{item.name}}</td>
             <td>{{item.description}}</td>
             <td>{{item.price}}</td>
-            <td><input type="button" ng-click="addToBasket(item.ID)" value="Add To Basket"></td>
+            <td><input type="button" ng-click="addToBasket(item.ID, item.name, item.price)" value="Add To Basket"></td>
             
 
         </tr>
