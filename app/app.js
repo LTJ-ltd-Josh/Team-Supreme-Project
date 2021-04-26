@@ -134,7 +134,10 @@ app.get("/ITEM_DIET", function(req, res) {
 // POST endpoint to receive orders
 app.post("/orderSubmitted", function(req, res){
 
-    console.log(req.body);
+    
+    dataFunctions.addOrder(req.body, function(rows){
+        console.log(rows);
+    });
     res.send("order received")
 });
 

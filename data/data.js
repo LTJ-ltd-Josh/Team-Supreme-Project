@@ -299,7 +299,7 @@ exports.getDietaryProvisions = function(callback){
     // Query to DB
     db.all(sql, function(err, rows) {
         if (err) {
-            return console.error(err);
+            console.log(err.message);
         }
         //callback with data from DB
         callback(rows);
@@ -317,4 +317,36 @@ exports.getItemDiet = function(callback){
         }
     callback(rows);
     });
+};
+
+// Function to add an order to the databse
+exports.addOrder = function(orderObject, callback){
+
+    // Query the databse to find the highest order number
+    var sql1 = `SELECT MAX(Order_number) AS orderNumber FROM ORDERS`
+
+    // send query to DB
+    db.all(sql1, function(err, rows){
+        if(err){
+            return console.error(err);
+        }
+
+        var orderNumber = rows[0].orderNumber
+        console.log(orderNumber + 1)
+        var sql2 = `
+                INSERT INTO ORDERS 
+                VALUES (${orderNumber + 1}, 2002, '19:15:00', '5', '0', 'ST001', 1);       
+        `
+        db.exec(sql2, function(err){
+
+            if(err){
+                return console.error(err);
+            }
+            callback(rows);
+        });
+
+        
+
+        
+   });
 };
