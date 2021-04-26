@@ -331,8 +331,10 @@ exports.addOrder = function(orderObject, callback){
             return console.error(err);
         }
 
-        var orderNumber = rows[0].orderNumber
+        var orderNumber = rows[0].orderNumber 
         console.log(orderNumber + 1)
+        
+        // SQL query to add a new ORDER record into the DB for this order.
         var sql2 = `
                 INSERT INTO ORDERS 
                 VALUES (${orderNumber + 1}, 2002, '19:15:00', '5', '0', 'ST001', 1);       
@@ -342,11 +344,53 @@ exports.addOrder = function(orderObject, callback){
             if(err){
                 return console.error(err);
             }
-            callback(rows);
-        });
 
-        
+            // SQL query to add a new ORDER_DETAIL record into the db for each food item ordered
+            var sql3 = `
+            INSERT INTO ORDER_DETAILS (Order_number, Item_id, Quantity, Sub_total)
+            VALUES
+            
+            `
 
-        
+            // count of iterations
+            var counter = 1;
+
+            // variable to store length of orderObject array
+            // reference - used to find out how to access length of array in js
+            // https://www.w3schools.com/jsref/jsref_length_array.asp
+            var arrayLength = orderObject.length;
+
+            
+            // for loop to add DB record for each food item ordered
+            for (var item of orderObject){
+
+                // if statement for all cases except for final item in array
+                if(counter != arrayLength){
+                    // update the SQL statement to include that item as a value
+                    sql3 = sql3 + `(${orderNumber + 1}, '${item.ID}', ${item.Quantity}, ${item.Price}),`
+                
+                    counter = counter + 1;
+                }
+                // for final item
+                else{
+                    sql3 = sql3 + `(${orderNumber + 1}, '${item.ID}', ${item.Quantity}, ${item.Price});`
+
+                    counter = counter + 1
+                }
+                           
+            };
+            
+            console.log(sql3);
+            // execute query
+            db.exec(sql3, function(err){
+                if (err){
+                    console.log(err.message)
+                };
+                
+                // callback function
+                callback()
+
+            });            
+        });       
    });
 };

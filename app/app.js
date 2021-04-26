@@ -135,8 +135,8 @@ app.get("/ITEM_DIET", function(req, res) {
 app.post("/orderSubmitted", function(req, res){
 
     
-    dataFunctions.addOrder(req.body, function(rows){
-        console.log(rows);
+    dataFunctions.addOrder(req.body, function(){
+        console.log('callback function');
     });
     res.send("order received")
 });
