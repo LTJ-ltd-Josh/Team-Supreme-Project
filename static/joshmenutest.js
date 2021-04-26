@@ -11,4 +11,10 @@ mainApp.controller("menuController", function($scope, $http){
 
         $scope.items = response.data;
     });    
+
+    $scope.addToBasket = function(id){
+        console.log(id);
+    };
+
+    $scope.basket = [];
 });
