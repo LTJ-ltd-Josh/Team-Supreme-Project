@@ -4,6 +4,9 @@ const express = require("express");
 
 const app = express();
 
+// allow express to understand JSON
+app.use(express.json());
+
 // require data.js so that the functions can be used here
 const dataFunctions = require("../data/data.js")
 
@@ -127,6 +130,13 @@ app.get("/ITEM_DIET", function(req, res) {
         
     });
 
+
+// POST endpoint to receive orders
+app.post("/orderSubmitted", function(req, res){
+
+    console.log(req.body);
+    res.send("order received")
+});
 
 
 
