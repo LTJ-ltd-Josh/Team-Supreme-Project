@@ -25,6 +25,7 @@ mainApp.controller("menuController", function($scope, $http){
             // If statement to check if id is already in basket
             if(item.ID == id){
                 // Increment quantity of item ordered
+                // need to work out how to calculate this to 2 DP.
                 item.Quantity = item.Quantity + 1
 
                 // Update price for items ordered
@@ -43,6 +44,14 @@ mainApp.controller("menuController", function($scope, $http){
 
         
     };
-
+    // Array to hold values of items in basket
     $scope.basket = [];
+
+    $scope.submitOrder = function(){
+
+        $http.post("/orderSubmitted", $scope.basket).then(function(response){
+
+            console.log(response.data);
+        });
+    };
 });
