@@ -90,6 +90,40 @@ margin-top: 20px;
 font-size: 16px; 
 }
 
+.add-cart-button { 
+border-radius: 5px;
+background-color: rgb(70, 197, 236) ;
+border: none;
+color: white;
+margin-top:-23px;
+padding: 3px 12px 20px 12px;
+max-height: 10px;
+width: 86px;
+float: right;
+text-align: center;
+font-size: 12px; 
+}
+
+.add-text{
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.icons-plus{
+	text-align: center;
+	font-size: 16px !important;
+	margin-right:-2px;
+	margin-top:1px;
+	margin-left:1px;
+}
+
+.icons-minus{
+	text-align: center;
+	font-size: 16px !important;
+	margin-left:-2px;
+	margin-right:1px;
+}
+
 .footer {
  
     text-align: right;
