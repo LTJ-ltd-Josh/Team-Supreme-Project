@@ -58,6 +58,10 @@ mainApp.controller("menuController", function($scope, $http){
 
             // log response from server
             console.log(response.data);
+
+            // hide basket data
+            document.getElementById("basket").style.visibility = "hidden";
+            document.getElementById("submissionConfirmation").style.visibility = "visible";
         });
     };
 });

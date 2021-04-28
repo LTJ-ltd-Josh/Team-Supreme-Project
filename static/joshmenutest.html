@@ -5,6 +5,7 @@
     <title>Josh Menu Test</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
     <script src="joshmenutest.js"></script>
+    <link rel="stylesheet" href="joshmenutest.css">
 </head>
 
 <body>
@@ -13,9 +14,10 @@
     <div ng-app = "mainApp" ng-controller="menuController">
     
     <h3>Basket</h3>
-    <ul>
+    <ul id="basket">
         <li ng-repeat="option in basket">Name: {{option.Name}} | Quantity: {{option.Quantity}} | Price: {{option.Price}}</li>
     </ul>
+    <p id="submissionConfirmation">Your order has been submitted. Click <a href='/'>here</a> to return to the main menu</p>
     <input type="button" value= "submit order" ng-click="submitOrder()">
     <table>
         <tr>
