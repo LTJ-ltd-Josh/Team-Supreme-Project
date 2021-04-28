@@ -9,15 +9,17 @@ mainApp.controller("menuController", function($scope, $http){
     // get request for menu data
     $http.get('/menu-data').then(function(response){
 
+        // assigne menu data to $scope.items so it can be accessed in HTML page
         $scope.items = response.data;
     });    
 
+    // Function for adding an item to the basket when user presses 'add to basket' button
     $scope.addToBasket = function(id, name, price){
         
-        console.log(id);
-        // boolean value to record if the item being added is already in basket
-        var inBasketBoolean = 0;
-        console.log(inBasketBoolean);
+        
+        // variable to record if the item being added is already in basket
+        var inBasket = 0;
+        
 
         // for loop to check if an item of same ID is already in basket
         for (var item of $scope.basket){
@@ -31,14 +33,15 @@ mainApp.controller("menuController", function($scope, $http){
                 // Update price for items ordered
                 item.Price = item.Price + price
 
-                // update in basket boolean vlue to true
-                inBasketBoolean = 1;
+                // update in basket value to 1
+                inBasket = 1;
             };
         };
-        console.log(inBasketBoolean);
+        
         // If statement to verify if item was already in basket
-        if (inBasketBoolean == 0){
-            console.log(name);
+        if (inBasket == 0){
+            
+            // add selected item to basket if it was not already in basket
             $scope.basket.push({ID: id, Name: name, Quantity: 1, Price: price});
         };
 
@@ -47,10 +50,13 @@ mainApp.controller("menuController", function($scope, $http){
     // Array to hold values of items in basket
     $scope.basket = [];
 
+    // function to submit order when user presses 'submit order'
     $scope.submitOrder = function(){
 
+        // POST request to server with data that is in basket variable
         $http.post("/orderSubmitted", $scope.basket).then(function(response){
 
+            // log response from server
             console.log(response.data);
         });
     };
