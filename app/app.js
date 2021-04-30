@@ -141,6 +141,11 @@ app.post("/orderSubmitted", function(req, res){
     res.send("order received")
 });
 
+// POST endpoint to reveive message that order has been completed
+app.post("/ordercomplete", function(req, res){
+
+    console.log(req.body);
+});
 
 
 // initiate server
