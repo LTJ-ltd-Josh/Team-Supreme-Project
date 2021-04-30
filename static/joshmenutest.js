@@ -45,10 +45,14 @@ mainApp.controller("menuController", function($scope, $http){
             $scope.basket.push({ID: id, Name: name, Quantity: 1, Price: price});
         };
 
+        //statement to update total price
+        $scope.price = $scope.price + price;
         
     };
     // Array to hold values of items in basket
     $scope.basket = [];
+
+    $scope.price = 0;
 
     // function to submit order when user presses 'submit order'
     $scope.submitOrder = function(){

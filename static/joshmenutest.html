@@ -15,8 +15,9 @@
     
     <h3>Basket</h3>
     <ul id="basket">
-        <li ng-repeat="option in basket">Name: {{option.Name}} | Quantity: {{option.Quantity}} | Price: {{option.Price}}</li>
+        <li ng-repeat="option in basket">Name: {{option.Name}} | Quantity: {{option.Quantity}} | Price: £{{option.Price}}</li>
     </ul>
+    <p>Total Price: £{{price}}</p>
     <p id="submissionConfirmation">Your order has been submitted. Click <a href='/'>here</a> to return to the main menu</p>
     <input type="button" value= "submit order" ng-click="submitOrder()">
     <table>
@@ -29,7 +30,7 @@
         <tr ng-repeat= "item in items">
             <td>{{item.name}}</td>
             <td>{{item.description}}</td>
-            <td>{{item.price}}</td>
+            <td>£{{item.price}}</td>
             <td><input type="button" ng-click="addToBasket(item.ID, item.name, item.price)" value="Add To Basket"></td>
             
 
