@@ -12,4 +12,18 @@ mainApp.controller("ordersController", function($scope, $http){
         // assign order data to scope.orders so it can be accessed in HTML page
         $scope.orders = response.data;
     }); 
+
+    $scope.completeOrder = function(orderNumber){
+
+        // POST request to server to update order to complete
+        $http.post("/ordercomplete", orderNumber).then(function(response){
+
+            // get request to referesh the list of orders.
+            $http.get("/orderslist").then(function(response){
+
+                // set new set of orders as the scope.orders for display in html.
+                $scope.orders = response.data;
+            });
+        });
+    };
 });
