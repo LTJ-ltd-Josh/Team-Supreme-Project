@@ -332,8 +332,7 @@ exports.addOrder = function(orderObject, callback){
         }
 
         var orderNumber = rows[0].orderNumber 
-        console.log(orderNumber + 1)
-        
+                
         // SQL query to add a new ORDER record into the DB for this order.
         var sql2 = `
                 INSERT INTO ORDERS 

@@ -136,7 +136,7 @@ app.post("/orderSubmitted", function(req, res){
 
     
     dataFunctions.addOrder(req.body, function(){
-        console.log('callback function');
+        
     });
     res.send("order received")
 });
