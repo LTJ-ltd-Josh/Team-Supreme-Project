@@ -49,12 +49,18 @@
             <th>Item Name</th>
             <th>Item Description</th>
             <th>Item Price</th>
+            <th>Dietary Provisions</th>
 
         </tr>
         <tr ng-repeat= "starter in starters">
             <td>{{starter.name}}</td>
             <td>{{starter.description}}</td>
             <td>£{{starter.price}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="diet in starter.dietaryProvisions">{{diet}}</li>
+                </ul>
+            </td>
             <td><input type="button" ng-click="addToBasket(starter.ID, starter.name, starter.price)" value="Add To Basket"></td>
             
 
@@ -67,12 +73,18 @@
             <th>Item Name</th>
             <th>Item Description</th>
             <th>Item Price</th>
+            <th>Dietary Provisions</th>
 
         </tr>
         <tr ng-repeat= "main in mains">
             <td>{{main.name}}</td>
             <td>{{main.description}}</td>
             <td>£{{main.price}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="diet in main.dietaryProvisions">{{diet}}</li>
+                </ul>
+            </td>
             <td><input type="button" ng-click="addToBasket(main.ID, main.name, main.price)" value="Add To Basket"></td>
        </tr>
     </table>
@@ -83,12 +95,16 @@
             <th>Item Name</th>
             <th>Item Description</th>
             <th>Item Price</th>
+            <th>Dietary Provisions</th>
 
         </tr>
         <tr ng-repeat= "dessert in desserts">
             <td>{{dessert.name}}</td>
             <td>{{dessert.description}}</td>
             <td>£{{dessert.price}}</td>
+            <td><ul>
+                <li ng-repeat="diet in dessert.dietaryProvisions">{{diet}}</li>
+            </ul></td>
             <td><input type="button" ng-click="addToBasket(dessert.ID, dessert.name, dessert.price)" value="Add To Basket"></td>
        </tr>
     </table>
@@ -99,12 +115,18 @@
             <th>Item Name</th>
             <th>Item Description</th>
             <th>Item Price</th>
+            <th>Dietary Provisions</th>
 
         </tr>
         <tr ng-repeat= "drink in drinks">
             <td>{{drink.name}}</td>
             <td>{{drink.description}}</td>
             <td>£{{drink.price}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="diet in drink.dietaryProvisions">{{diet}}</li>
+                </ul>
+            </td>
             <td><input type="button" ng-click="addToBasket(drink.ID, drink.name, drink.price)" value="Add To Basket"></td>
        </tr>
     </table>
