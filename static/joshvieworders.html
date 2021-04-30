@@ -17,11 +17,13 @@
             <tr>
                 <th>Order Number</th>
                 <th>Table Number</th>
-                <th>Items</th>
+                <th>Assigned To</th>
+                <th>Items | Quantity</th>
             </tr>
             <tr ng-repeat="order in orders">
                 <td>{{order.orderNumber}}</td>
                 <td>{{order.tableNumber}}</td>
+                <td>{{order.staffFirstName}} {{order.staffSurname}}</td>
                 <td>
                     <ul> 
                         <li ng-repeat="item in order.orderItems">{{item.name}} | {{item.quantity}}</li>
