@@ -319,8 +319,43 @@ exports.getItemDiet = function(callback){
     });
 };
 
+
+// Function to add customer to database
+exports.addCustomer = function(name, tableNumber, email, callback){
+
+    // SQL to get current highest customer value
+    var customerSelect = `SELECT MAX(Customer_id) AS customerID FROM CUSTOMER`
+    // send query to DB
+    db.all(customerSelect, function(err, rows){
+
+        if(err){
+            console.log(err.message);
+        };
+
+        var customerNumber = rows[0].customerID + 1;
+
+        // SQL to add customer record to DB
+        var customerInsert = `
+            INSERT INTO CUSTOMER
+            VALUES (${customerNumber}, '${name}', '${tableNumber}', '${email}');
+        `
+        // execute call to db
+        db.exec(customerInsert, function(err){
+            if (err){
+                console.log(err.message);
+            };
+
+            callback(customerNumber);
+        });
+        
+    });
+
+    
+
+
+};
 // Function to add an order to the databse
-exports.addOrder = function(orderObject, callback){
+exports.addOrder = function(basket, customerNumber, tableNumber,  callback){
 
     // Query the databse to find the highest order number
     var sql1 = `SELECT MAX(Order_number) AS orderNumber FROM ORDERS`
@@ -336,7 +371,7 @@ exports.addOrder = function(orderObject, callback){
         // SQL query to add a new ORDER record into the DB for this order.
         var sql2 = `
                 INSERT INTO ORDERS 
-                VALUES (${orderNumber + 1}, 2002, '19:15:00', '5', '0', 'ST001', 1);       
+                VALUES (${orderNumber + 1}, 2002, '19:15:00', '${tableNumber}', '0', 'ST001', ${customerNumber});       
         `
         db.exec(sql2, function(err){
 
@@ -354,14 +389,14 @@ exports.addOrder = function(orderObject, callback){
             // count of iterations
             var counter = 1;
 
-            // variable to store length of orderObject array
+            // variable to store length of basket array
             // reference - used to find out how to access length of array in js
             // https://www.w3schools.com/jsref/jsref_length_array.asp
-            var arrayLength = orderObject.length;
+            var arrayLength = basket.length;
 
             
             // for loop to add DB record for each food item ordered
-            for (var item of orderObject){
+            for (var item of basket){
 
                 // if statement for all cases except for final item in array
                 if(counter != arrayLength){
