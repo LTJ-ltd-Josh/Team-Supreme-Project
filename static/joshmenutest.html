@@ -20,23 +20,59 @@
     <p>Total Price: £{{price}}</p>
     <p id="submissionConfirmation">Your order has been submitted. Click <a href='/'>here</a> to return to the main menu</p>
     <input type="button" value= "submit order" ng-click="submitOrder()">
-    <table>
+    
+    <h2>Starters</h2>
+    <table id="startersTable">
         <tr>
             <th>Item Name</th>
             <th>Item Description</th>
             <th>Item Price</th>
 
         </tr>
-        <tr ng-repeat= "item in items">
-            <td>{{item.name}}</td>
-            <td>{{item.description}}</td>
-            <td>£{{item.price}}</td>
-            <td><input type="button" ng-click="addToBasket(item.ID, item.name, item.price)" value="Add To Basket"></td>
+        <tr ng-repeat= "starter in starters">
+            <td>{{starter.name}}</td>
+            <td>{{starter.description}}</td>
+            <td>£{{starter.price}}</td>
+            <td><input type="button" ng-click="addToBasket(starter.ID, starter.name, starter.price)" value="Add To Basket"></td>
             
 
         </tr>
 
     </table>
+    <h2>Mains</h2>
+    <table id="mainsTable">
+        <tr>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Item Price</th>
+
+        </tr>
+        <tr ng-repeat= "main in mains">
+            <td>{{main.name}}</td>
+            <td>{{main.description}}</td>
+            <td>£{{main.price}}</td>
+            <td><input type="button" ng-click="addToBasket(main.ID, main.name, main.price)" value="Add To Basket"></td>
+       </tr>
+    </table>
+
+    <h2>Desserts</h2>
+    <table id="dessertsTable">
+        <tr>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Item Price</th>
+
+        </tr>
+        <tr ng-repeat= "dessert in desserts">
+            <td>{{dessert.name}}</td>
+            <td>{{dessert.description}}</td>
+            <td>£{{dessert.price}}</td>
+            <td><input type="button" ng-click="addToBasket(dessert.ID, dessert.name, dessert.price)" value="Add To Basket"></td>
+       </tr>
+    </table>
+
+
+
     </div>
 
 </body>

@@ -11,6 +11,28 @@ mainApp.controller("menuController", function($scope, $http){
 
         // assigne menu data to $scope.items so it can be accessed in HTML page
         $scope.items = response.data;
+
+        // arrays to hold items by item type.
+        $scope.starters = [];
+        $scope.mains = [];
+        $scope.desserts = [];
+
+        // for loop to add items to respective item type array
+        for (var item of $scope.items){
+            // check if item is a starter
+            if(item.category == "C1"){
+
+                $scope.starters.push(item);
+            };
+            if(item.category == "C2"){
+
+                $scope.mains.push(item);
+            };
+            if(item.category == "C3"){
+                $scope.desserts.push(item);
+            };
+
+        };
     });    
 
     // Function for adding an item to the basket when user presses 'add to basket' button
