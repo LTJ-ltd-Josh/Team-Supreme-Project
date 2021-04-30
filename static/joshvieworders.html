@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Orders</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="joshvieworders.js"></script>
+</head>
+
+<body>
+    <h2>Orders</h2>
+
+    <div ng-app="mainApp" ng-controller="ordersController">
+
+        <table>
+            <tr>
+                <th>Order Number</th>
+                <th>Table Number</th>
+                <th>Items</th>
+            </tr>
+            <tr ng-repeat="order in orders">
+                <td>{{order.orderNumber}}</td>
+                <td>{{order.tableNumber}}</td>
+                <td>{{order.orderItems}}</td>
+                <td><input type="button" value="Mark Order as Complete" ng-click="completeOrder(order.orderNumber)"></td>
+
+            </tr>
+            
+
+
+        </table>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+
+
+</html>
