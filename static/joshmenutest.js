@@ -16,6 +16,7 @@ mainApp.controller("menuController", function($scope, $http){
         $scope.starters = [];
         $scope.mains = [];
         $scope.desserts = [];
+        $scope.drinks = [];
 
         // for loop to add items to respective item type array
         for (var item of $scope.items){
@@ -30,6 +31,9 @@ mainApp.controller("menuController", function($scope, $http){
             };
             if(item.category == "C3"){
                 $scope.desserts.push(item);
+            };
+            if(item.category == "C4"){
+                $scope.drinks.push(item);
             };
 
         };
