@@ -414,7 +414,6 @@ exports.addOrder = function(basket, customerNumber, tableNumber,  callback){
                            
             };
             
-            console.log(sql3);
             // execute query
             db.exec(sql3, function(err){
                 if (err){
