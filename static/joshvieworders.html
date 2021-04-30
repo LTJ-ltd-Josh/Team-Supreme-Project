@@ -20,7 +20,11 @@
             <tr ng-repeat="order in orders">
                 <td>{{order.orderNumber}}</td>
                 <td>{{order.tableNumber}}</td>
-                <td>{{order.orderItems}}</td>
+                <td>
+                    <ul> 
+                        <li ng-repeat="item in order.orderItems">{{item.name}} | {{item.quantity}}</li>
+                    </ul>
+                </td>
                 <td><input type="button" value="Mark Order as Complete" ng-click="completeOrder(order.orderNumber)"></td>
 
             </tr>
