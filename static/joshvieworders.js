@@ -15,8 +15,10 @@ mainApp.controller("ordersController", function($scope, $http){
 
     $scope.completeOrder = function(orderNumber){
 
+        // add order number to json object for posting
+        var body = {order: orderNumber}
         // POST request to server to update order to complete
-        $http.post("/ordercomplete", orderNumber).then(function(response){
+        $http.post("/ordercomplete", body).then(function(response){
 
             // get request to referesh the list of orders.
             $http.get("/orderslist").then(function(response){
