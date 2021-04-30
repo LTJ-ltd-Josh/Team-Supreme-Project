@@ -144,8 +144,11 @@ mainApp.controller("menuController", function($scope, $http){
             console.log(response.data);
 
             // hide basket data
-            document.getElementById("basket").style.visibility = "hidden";
-            document.getElementById("submissionConfirmation").style.visibility = "visible";
+            document.getElementById("basketInfo").style.display = "none";
+            
+
+            // show confirmation message
+            document.getElementById("submissionConfirmation").style.display = "block";
         });
     };
     $scope.testModel = function(){
