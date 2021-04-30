@@ -13,6 +13,24 @@
 
     <div ng-app = "mainApp" ng-controller="menuController">
     
+    <h3>About You</h3>
+    <table id="customerTable">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" ng-model="customerName"></td>
+        </tr>
+        <tr>
+            <td>Table Number:</td>
+            <td><input type="text" ng-model="tableNumber"></td>
+        </tr>
+        <tr>
+            <td>Email Address:</td>
+            <td><input type="text" ng-model="emailAddress"></td>
+        </tr>
+        
+    </table>
+    
+    
     <h3>Basket</h3>
     <ul id="basket">
         <li ng-repeat="option in basket">Name: {{option.Name}} | Quantity: {{option.Quantity}} | Price: £{{option.Price}} <input type="button" value="Remove 1" ng-click="removeItem(option.ID, option.Price)"></li>

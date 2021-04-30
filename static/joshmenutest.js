@@ -137,4 +137,8 @@ mainApp.controller("menuController", function($scope, $http){
             document.getElementById("submissionConfirmation").style.visibility = "visible";
         });
     };
+    $scope.testModel = function(){
+
+        console.log($scope.customerName);
+    };
 });
