@@ -52,7 +52,54 @@ mainApp.controller("menuController", function($scope, $http){
     // Array to hold values of items in basket
     $scope.basket = [];
 
+    // variable to hold price of items in basket
     $scope.price = 0;
+
+    // function to remove items from basket
+    $scope.removeItem = function(id, price){
+
+        // A counter to enable using splice method to remove item from basket array
+        // Reference: I followed this post to learn how to remove an item from an array:
+        // https://love2dev.com/blog/javascript-remove-from-array/
+        var spliceCounter = 0;
+
+        // for loop to find the item in the basket that matches the id of the item
+        for (var item of $scope.basket){
+
+            // if statement to see the ID matches that passed into the formular
+            if (item.ID == id){
+
+                // check to see if there is more than on in the basket
+                if(item.Quantity > 1){
+                    
+                    // reduce total price for that item by the value of 1 item
+                    item.Price = item.Price - price/item.Quantity;
+
+                    // reduce quantity by 1
+                    item.Quantity = item.Quantity - 1;
+
+                    
+                }
+                else {
+                    $scope.basket.splice(spliceCounter, 1);
+                };
+            }
+
+            // update total price
+            // reset price to 0
+            $scope.price = 0
+
+            // for loop to recalculate price
+            for (var item of $scope.basket){
+                $scope.price = $scope.price + item.Price;
+
+            };
+            // iterate spliceCounter
+            spliceCounter = spliceCounter + 1;
+
+        };
+
+    };
 
     // function to submit order when user presses 'submit order'
     $scope.submitOrder = function(){
