@@ -401,14 +401,14 @@ exports.completeOrder = function(orderNumber, callback){
     // SQL string to mark order as compelete
     var sql = ` 
             UPDATE ORDERS
-            SET Order_complete = true
+            SET Order_completed = true
             WHERE Order_number = ${orderNumber};
         `
     // call to DB to execute query
     db.exec(sql, function(err){
 
         if (err){
-            console.log(error);
+            console.log(err.message);
         };
         
         // call back function

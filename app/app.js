@@ -144,7 +144,11 @@ app.post("/orderSubmitted", function(req, res){
 // POST endpoint to reveive message that order has been completed
 app.post("/ordercomplete", function(req, res){
 
-    console.log(req.body);
+    
+    dataFunctions.completeOrder(req.body.order, function(){
+
+        res.send("OK");
+    });
 });
 
 
