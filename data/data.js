@@ -388,9 +388,31 @@ exports.addOrder = function(orderObject, callback){
                 };
                 
                 // callback function
-                callback()
+                callback();
 
             });            
         });       
    });
+};
+
+// function to update an order as complete in the database
+exports.completeOrder = function(orderNumber, callback){
+
+    // SQL string to mark order as compelete
+    var sql = ` 
+            UPDATE ORDERS
+            SET Order_complete = true
+            WHERE Order_number = ${orderNumber};
+        `
+    // call to DB to execute query
+    db.exec(sql, function(err){
+
+        if (err){
+            console.log(error);
+        };
+        
+        // call back function
+        callback();
+    });
+
 };
