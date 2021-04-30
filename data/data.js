@@ -47,7 +47,7 @@ exports.getMenu = function(callback){
                 ITEM_DIET  
                 ON
                 MENU.Item_id = ITEM_DIET.Item_id
-            JOIN  
+            LEFT JOIN  
                 DIETARY_PROVISIONS
                 ON DIETARY_PROVISIONS.Diet_code = ITEM_DIET.Diet_code
     `
