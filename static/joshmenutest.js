@@ -126,8 +126,15 @@ mainApp.controller("menuController", function($scope, $http){
     // function to submit order when user presses 'submit order'
     $scope.submitOrder = function(){
 
+        // Prepare data
+        var data = {customerName: $scope.customerName,
+                    tableNumber: $scope.tableNumber,
+                    emailAddress: $scope.emailAddress,
+                    basket: $scope.basket};
+
+        console.log(data);
         // POST request to server with data that is in basket variable
-        $http.post("/orderSubmitted", $scope.basket).then(function(response){
+        $http.post("/orderSubmitted", data).then(function(response){
 
             // log response from server
             console.log(response.data);
