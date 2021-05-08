@@ -1,15 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Staff</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Dining Webpage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="supreme.css">
+    <script src="supreme.js"></script>
 </head>
+    
 <body>
-    <a href="simplehomepage.html">Home</a>
-    <h2>Staff Page</h2>
-    <p>Show me the <a href="/vieworders.html">orders</a></p>
-    <p>Let me update the <a href="/">menu</a></p>
+
+    <header>    
+        <div id="main">
+            <div class ="image1"><img src="Restaurant.jpeg"width="230" height="120" ></div>
+            <div class="right-nav">
+                <div><h2 style = "font-size: 50px;" >Supreme Dining</h2></div>
+    
+            <div class= backbuttons>
+            <button  style="margin: 10px" type="button" onclick="document.location='index.html'">Home</button>
+            <button  style="margin: 10px" type="button" onclick="goBack()">Back</button> 
+            </div>
+            </div>
+        </div>
+        <hr style="height: 4px;background-color:rgb(65, 225, 236);" />
+    </header>
+          
+    <article class="art">
+
+      <div class = "list">     
+            
+    </div>
+    <main class="main">
+        <div class="main-heading text-center pb-3">
+            <h2>Staff Page</h2>
+            <div class = "list">
+                <li><button class= "button3" onclick="document.location='vieworders.html'">VIEW ORDERS</button></li>
+                <li><button class= "button3" onclick="document.location='simplestaffpage.html'">UPDATE MENU</button></li>
+            </div>
+        </div>
+    </main>
+    
+    </article>
+
+    <div id="main3">
+    <div class= footer>
+        
+    <a href="https://www.instagram.com/"><img alt="Instagram" src="instagram.jpeg" width="50" height="30"></a>
+    <a href="https://www.Facebook.com/"><img alt="Facebook" src="facebook.jpeg" width=50 height=30></a>
+  
+    </div>
+
 </body>
-
-
-
-</html> 
+</html>

@@ -1,7 +1,7 @@
 .wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    
 }
 footer{
     padding: 30px 10px !important;
@@ -15,17 +15,12 @@ p.w3-text-grey {
 }
 .main-heading h2 {
     font-weight: 700;
-    padding-top: 20px;
+    padding-top: 40px;
+    padding-left: 20%;
+    
+    
 }
-.main-heading h2::after {
-    display: inline-block;
-    vertical-align: baseline;
-    width: 10px;
-    height: 10px;
-    margin-left: 10px;
-    content: "";
-    background: rgb(65, 225, 236);
-}
+
 .price p::before{
     content: "...................";
     margin: 10px;
@@ -42,7 +37,10 @@ header {
     padding: 15px 20px;
 }
 article{
-    margin-top: 150px;
+    
+    margin-top: 200px;
+    padding: 25px 200px;  
+    
 }
 .footer{
     padding: 20px ;
@@ -60,7 +58,8 @@ hr{
         padding-top: 20px;
     }
     .list {
-        border-right: 4px solid rgb(65, 225, 236);
+        list-style-type: none;
+        border-right: 4px solid rgb(65,225, 236);
     
     }
 .art{
@@ -69,6 +68,7 @@ hr{
 main.main {
     flex: 0 0 55%;
     margin: 0 32%;
+    
 }
 .footer {
     position: fixed;
