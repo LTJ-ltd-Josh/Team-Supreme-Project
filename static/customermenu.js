@@ -6,6 +6,7 @@ var mainApp = angular.module("mainApp", []);
 // create the controller
 mainApp.controller("menuController", function($scope, $http){
 
+    $scope.currentScreen = 'starters'
     // get request for menu data
     $http.get('/menu-data').then(function(response){
 
@@ -155,4 +156,8 @@ mainApp.controller("menuController", function($scope, $http){
 
         console.log($scope.customerName);
     };
+
+    $scope.setCurrentScreen = function(screen){
+        $scope.currentScreen = screen
+    }
 });

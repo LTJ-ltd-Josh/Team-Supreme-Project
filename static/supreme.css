@@ -122,12 +122,9 @@ border-radius: 5px;
 background-color: rgb(70, 197, 236) ;
 border: none;
 color: white;
-margin-top:-23px;
 padding: 3px 12px 20px 12px;
 max-height: 10px;
-width: 86px;
 float: right;
-text-align: center;
 font-size: 12px; 
 }
 
@@ -175,4 +172,5 @@ div#main2 {
   flex: 0 0 25%;
   position: fixed;
   width: 20%;
+  margin-top: -70px;
 }

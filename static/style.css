@@ -21,6 +21,12 @@ p.w3-text-grey {
     
 }
 
+.button-submit{
+    width: auto !important;
+    max-height: 50px;
+    margin-left: 0px !important;
+    font-size: 14px !important;
+}
 .price p::before{
     content: "...................";
     margin: 10px;
@@ -38,8 +44,7 @@ header {
 }
 article{
     
-    margin-top: 200px;
-    padding: 25px 200px;  
+    margin-top: 200px;  
     
 }
 .footer{
@@ -67,8 +72,8 @@ hr{
 }    
 main.main {
     flex: 0 0 55%;
-    margin: 0 32%;
-    
+    margin: 0 22%;
+    margin-top: -60px;
 }
 .footer {
     position: fixed;
