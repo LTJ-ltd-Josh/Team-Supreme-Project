@@ -73,7 +73,7 @@ app.get("/ORDERS", function(req, res) {
  });
 
 // endpoint to get all data from MENU table 
-app.get("/MENUTABLE", function(req, res) {
+app.get("/MENUTABLES", function(req, res) {
    // call getMenuTable function
     dataFunctions.getMenuTable(function(rows){
         // send data to client as json

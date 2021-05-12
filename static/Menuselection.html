@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Dining Webpage</title>
+    <link rel="stylesheet" href="supreme1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <script src="supreme.js"></script>
+    <script src="customermenu.js"></script>
+    <link rel="stylesheet" href="customermenu.css">
+    <div ng-app = "mainApp" ng-controller="menuController"> 
+    
+</head>
+
+
+<header>    
+    <div id="main">
+        <div class ="image1"><img src="Restaurant.jpeg"width="230" height="120" ></div>
+        <div class="right-nav">
+            <div><h2 style = "font-size: 50px;" >Supreme Dining</h2></div>
+
+        <div class= backbuttons>
+        <button  style="margin: 10px" type="button" onclick="document.location='index.html'">Home</button>
+        <button  style="margin: 10px" type="button" onclick="goBack()">Back</button> 
+        </div>
+        </div>
+    </div>
+    <hr style="height: 4px;background-color:rgb(65, 225, 236);" />
+</header>
+
+<body>
+
+    <div ng-app = "mainApp" ng-controller="menuController">  
+    <section>  
+          
+    <nav>   
+    <div id="main2">   
+        <div class = "list">     
+          
+            
+          
+            <li> <button class="button1"> <a href = "#Starters">Starters</a></button></li>
+            <li> <button class="button1"> <a href = "#Mains">Mains</a></button></li>
+            <li> <button class="button1"> <a href = "#Desserts">Desserts</a></button></li>
+            <li> <button class="button1"> <a href = "#Drinks">Drinks</a></button></li>
+            
+        </div>
+        
+    </div>	
+    </nav>
+    
+
+    <section class="art"> 
+        
+        <main class="main">
+            
+          
+          <br>
+            <h2><a id = "Starters"> Starters</a></h2>
+    <table id="startersTable">
+        <tr>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Item Price</th>
+            <th>Dietary Provisions</th>
+
+        </tr>
+        <tr ng-repeat= "starter in starters">
+            <td>{{starter.name}}</td>
+            <td>{{starter.description}}</td>
+            <td>£{{starter.price}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="diet in starter.dietaryProvisions">{{diet}}</li>
+                </ul>
+            </td>
+            <td><input type="button" ng-click="addToBasket(starter.ID, starter.name, starter.price)" value="Add To Basket"></td>
+            
+
+        </tr>
+
+    </table>
+    <h2><a id = "Mains"> Mains</a></h2>
+    <table id="mainsTable">
+        <tr>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Item Price</th>
+            <th>Dietary Provisions</th>
+
+        </tr>
+        <tr ng-repeat= "main in mains">
+            <td>{{main.name}}</td>
+            <td>{{main.description}}</td>
+            <td>£{{main.price}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="diet in main.dietaryProvisions">{{diet}}</li>
+                </ul>
+            </td>
+            <td><input type="button" ng-click="addToBasket(main.ID, main.name, main.price)" value="Add To Basket"></td>
+       </tr>
+    </table>
+
+    <h2><a id = "Desserts"> Desserts</a></h2>
+    <table id="dessertsTable">
+        <tr>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Item Price</th>
+            <th>Dietary Provisions</th>
+
+        </tr>
+        <tr ng-repeat= "dessert in desserts">
+            <td>{{dessert.name}}</td>
+            <td>{{dessert.description}}</td>
+            <td>£{{dessert.price}}</td>
+            <td><ul>
+                <li ng-repeat="diet in dessert.dietaryProvisions">{{diet}}</li>
+            </ul></td>
+            <td><input type="button" ng-click="addToBasket(dessert.ID, dessert.name, dessert.price)" value="Add To Basket"></td>
+       </tr>
+    </table>
+
+    <h2><a id = "Drinks"> Drinks</a></h2>
+    <table id="drinksTable">
+        <tr>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Item Price</th>
+            <th>Dietary Provisions</th>
+
+        </tr>
+        <tr ng-repeat= "drink in drinks">
+            <td>{{drink.name}}</td>
+            <td>{{drink.description}}</td>
+            <td>£{{drink.price}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="diet in drink.dietaryProvisions">{{diet}}</li>
+                </ul>
+            </td>
+            <td><input type="button" ng-click="addToBasket(drink.ID, drink.name, drink.price)" value="Add To Basket"></td>
+       </tr>
+    </table>
+
+
+
+        
+        
+        
+        </section>
+
+        <section class="aside">
+        <br>
+            <h2>About You</h3>
+            <table id="customerTable">
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" ng-model="customerName"></td>
+                </tr>
+                <tr>
+                    <td>Table Number:</td>
+                    <td><input type="text" ng-model="tableNumber"></td>
+                </tr>
+                <tr>
+                    <td>Email Address:</td>
+                    <td><input type="text" ng-model="emailAddress"></td>
+                </tr>
+                
+            </table>
+            
+            
+            <h2>Basket</h3>
+            <div id="basketInfo">
+            <ul id="basket">
+                <li ng-repeat="option in basket">Name: {{option.Name}} | Quantity: {{option.Quantity}} | Price: £{{option.Price}} <input type="button" value="Remove 1" ng-click="removeItem(option.ID, option.Price)"></li>
+            </ul>
+            <p id="price">Total Price: £{{price}}</p>
+            <input type="button" value= "submit order" ng-click="submitOrder()" id="submitButton">
+            </div>
+            <p id="submissionConfirmation">Your order has been submitted. Click <a href='index.html'>here</a> to return to the main menu</p>
+            
+           
+        </section> 
+    </main> 
+   
+    <div id="main3">
+        <div class= footer>
+            
+        <a href="https://www.instagram.com/"><img alt="Instagram" src="instagram.jpeg" width="50" height="30"></a>
+        <a href="https://www.Facebook.com/"><img alt="Facebook" src="facebook.jpeg" width=50 height=30></a>
+      
+        </div>
+    </div>
+        
+</body>
+</html>

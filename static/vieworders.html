@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="supreme1.css">
+    <link rel="stylesheet" href="style1.css">
+    
+    
     <title>View Orders</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
     <script src="vieworders.js"></script>
+    <script src="supreme.js"></script>
 </head>
 
-<body>
-    <a href="simplehomepage.html">Home</a>
-    <a href="simplestaffpage.html">Staff</a>
-    <h2>Orders</h2>
+<header>    
 
+    <div id="main">
+      <div class ="image1"><img src="Restaurant.jpeg"width="230" height="120" ></div>
+        <div class="right-nav">
+          <div><h2 style = "font-size: 50px;" >Supreme Dining View Orders</h2></div>
+            <div class= backbuttons>
+                <button  style="margin: 10px" type="button" onclick="document.location='index.html'">Home</button>
+                <button  style="margin: 10px" type="button" onclick="goBack()">Back</button> 
+            </div>
+              
+        </div>
+    </div>
+    <hr style="height: 4px;background-color:rgb(65, 225, 236);" />
+  
+  </header>
+<body>
+
+    <div class = "body">
     <div ng-app="mainApp" ng-controller="ordersController">
 
         <table>
@@ -40,9 +63,6 @@
 
 
     </div>
-
-
-
 
 </body>
 

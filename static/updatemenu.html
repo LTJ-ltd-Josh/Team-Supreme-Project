@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supreme Dining Webpage</title>
+    <link rel="stylesheet" href="supreme1.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="customermenu.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.js"></script>
+    <script src="supreme.js"></script>
+    <script src="customermenu.js"></script>
+    <script src="update.js"></script>
+    <script src="updatemenu.js"></script>  
+    
+</head>
+    
+
+<header>    
+
+  <div id="main">
+    <div class ="image1"><img src="Restaurant.jpeg"width="230" height="120" ></div>
+      <div class="right-nav">
+        <div><h2 style = "font-size: 50px;" >Supreme Dining Update Menu</h2></div>
+          <div class= backbuttons>
+              <button  style="margin: 10px" type="button" onclick="document.location='index.html'">Home</button>
+              <button  style="margin: 10px" type="button" onclick="goBack()">Back</button> 
+          </div>
+            
+      </div>
+  </div>
+  <hr style="height: 4px;background-color:rgb(65, 225, 236);" />
+
+</header>
+
+<body>
+  <div ng-app="mainApp" ng-controller="itemsController">
+       
+    <article> 
+    
+    
+        
+            <table border=1>
+              <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DESCRIPTION</th>
+                <th>CATEGORY_ID</th>
+                <th>PRICE</th>
+              
+                
+              </tr>
+              <tr ng-repeat = "menutable in menutables">
+                <td>{{menutable.Item_id }}</td>
+                <td>{{menutable.Item_name}}</td>
+                <td>{{menutable. Description }}</td>
+                <td>{{menutable.Category_id }}</td>
+                <td>{{menutable. Price}}</td>
+               
+                <td><input type="button" ng-click="deleteMenuTable(menutable.Item_id)" value="Delete"></td>
+               
+              </tr>
+              <tr>
+                <td><input type="text" ng-model="new_menutable.Item_id"></td>
+                <td><input type="text" ng-model="new_menutable.Item_name"></td>
+                <td><input type="text" ng-model="new_menutable.Description"></td>
+                <td><input type="text" ng-model="new_menutable.Category_id "></td>
+                <td><input type="text" ng-model="new_menutable.Price"></td>
+    
+                <td><input type="button" ng-click="createMenuTable()" value="Create"></td>
+              </tr>
+            </table>
+    
+            
+        
+      </article>
+      </div>
+    
+    </body>
