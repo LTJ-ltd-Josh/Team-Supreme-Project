@@ -55,7 +55,7 @@ font-size: 16px;
   float: left;
   }
   .button3 { 
-    border-radius: 8px;
+    border-radius: 8px; /*makes the buttons have a rounded apearance*/
     background-color: rgb(70, 197, 236) ;
     border: none;
     color: white;

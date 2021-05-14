@@ -1,53 +1,11 @@
 
-/*top container*/
-    
-    /* #main {
-      width: 100%;
-      height: 20%;
-      display: flex;
-    }
 
-    #main div {
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: 50px;
-    }
-    
-    #main div:nth-of-type(1) {
-      flex-basis: 15%;
-    }
-    #main div:nth-of-type(2) {
-      flex-basis: 70%;
-    }
-    #main div:nth-of-type(3) {
-      flex-basis: 15%; 
-    } */
-/* Middle container*/   
-
-/* #main2 {
-      width: 100%;
-      height: 70%;
-      
-      display: flex;
-    }
-    
-    #main2 div {
-      flex-grow: 0;
-      flex-shrink: 0;
-      flex-basis: 50px;
-	  width: 800px;
-      margin-right: 106px;
-    }
-    
-    #main2 div:nth-of-type(1) {
-      flex-basis: 20%;
-    } */
     #main2 div:nth-of-type(2) {
       /* flex-basis: 80%; */
     }
     
    
-/*footer container*/
+
 
 #main3 {
       width: 100%;
@@ -124,7 +82,7 @@ border: none;
 color: white;
 padding: 3px 12px 20px 12px;
 max-height: 10px;
-float: right;
+float: right; /*position to the right of the section*/
 font-size: 12px; 
 }
 
