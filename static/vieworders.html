@@ -52,8 +52,10 @@
                         <li ng-repeat="item in order.orderItems">{{item.name}} | {{item.quantity}}</li>
                     </ul>
                 </td>
-                <td><input type="button" value="Mark Order as Complete" ng-click="completeOrder(order.orderNumber)"></td>
 
+                <td><p id="my_text"></p></td>
+                <td><input type="button" value="Mark Order as Complete" ng-click="completeOrder(order.orderNumber)"></td>
+                <td><button  style="margin: 10px" type="button" onclick="inProgress()">Select</button> </td>
             </tr>
             
 
